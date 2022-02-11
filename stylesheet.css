@@ -29,10 +29,10 @@ ul form {
     width:100%;
 }
 ul form input {
-    height:5em;
+    height:7vw;
     width:90%;
     text-align: center;
-    font-size: 160%;
+    font-size: 3em;
     color:azure;
     background-color: black;
 }
