@@ -21,3 +21,10 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+ul{
+    display: flex;
+    flex-direction: row;
+}
+ul form {
+    width:100%;
+}
