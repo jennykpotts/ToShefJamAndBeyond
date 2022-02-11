@@ -1,8 +1,9 @@
 function startGame() {  
     myGameArea.start();  
 }  
-  
-var  myGameArea = {  
+
+/*
+var myGameArea = {  
     canvas : document.createElement("canvas"),  
     start : function() {  
         this.canvas.width = 1400;  
@@ -11,3 +12,4 @@ var  myGameArea = {
         document.body.insertBefore(this.canvas, document.body.childNodes[0]);  
     }  
 }
+*/
