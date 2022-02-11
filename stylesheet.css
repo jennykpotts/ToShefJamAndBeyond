@@ -1,13 +1,12 @@
-canvas {  
-    border: 1px solid #0C0C0C;  
-    background-color: #20356B;  
+canvas {
+    background-color: transparent;  
     width: 100%;
     height: 100%;
 }  
 
 section.canvas {
-    width: 95%;
-    height: 95%;
+    width: 98%;
+    height: 98%;
     align-items: center;
     padding: 2%;
 }
