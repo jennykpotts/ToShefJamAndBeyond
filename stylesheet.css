@@ -29,3 +29,9 @@ ul{
 ul form {
     width:100%;
 }
+ul form input {
+    height:5em;
+    width:90%;
+    text-align: center;
+    font-size: 160%;
+}
