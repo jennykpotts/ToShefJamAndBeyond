@@ -4,10 +4,10 @@ canvas {
 }  
 
 section.canvas {
-    width: 90%;
-    height: 90%;
+    width: 95%;
+    height: 95%;
     align-items: center;
-    padding: 5%;
+    padding: 2%;
 }
 canvas {
     width: 100%;
