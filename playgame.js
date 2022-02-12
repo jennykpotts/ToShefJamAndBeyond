@@ -1,3 +1,4 @@
+//Scrolling background image for canvas
 (function() {
     window.requestAnimationFrame = window.requestAnimationFrame
             || window.webkitRequestAnimationFrame
@@ -11,7 +12,7 @@
 
     var img = new Image();
     img.onload = imageLoaded;
-    img.src = 'darkblue.jpg';
+    img.src = 'planets.png';
 
     function imageLoaded() {
         draw(0);
@@ -20,12 +21,8 @@
     var lastFrameTime = 0;
 
     function start() {
-        looping = looping;
-
-        if (looping) {
-            lastFrameTime = Date.now();
-            requestAnimationFrame(loop);
-        }
+        lastFrameTime = Date.now();
+        requestAnimationFrame(loop);
     }
 
     function loop() {
@@ -50,8 +47,45 @@
         context.save();
         context.translate(-xpos, 0);
         for (var i = 0; i < numImages; i++) {
-            context.drawImage(img, i * img.width, 0);
+            context.drawImage(img, i * img.width, 0, photo.width * 0.2, photo.height * 0.4);
         }
         context.restore();
     }
+
+    //Display planets on canvas
+    var imgArr = ["blueplanet.png", "gasgiant.png", "iceplanet.png", "purpleplanet.png", "redplanet.png"];
+
+    var photo = new Image();
+    photo.onload = function() {
+        context.drawImage(photo, 0, 0, photo.width * 0.02, photo.height * 0.04);  
+    }
+    photo.src = "blueplanet.png";
+    
+    //displayImg();
+
+
+    /*
+    function displayImg(){
+        var num = Math.floor(Math.random() * (imgArr.length));
+        //document.canvas.src=""+imgArr[num];
+        context.drawImage(imgArr[num], 50, 50);
+    }
+    */
+
+    /*
+    var planet = new Image();
+    planet.src = "blueplanet.png";
+
+    function drawMap() {
+        context.drawImage(planet, 0, 0);
+    }
+
+    function init() {
+        drawMap();
+    }
+
+    planet.onload = function() {
+        init();
+    }
+    */
 }());
