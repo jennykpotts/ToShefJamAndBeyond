@@ -24,15 +24,28 @@ body {
 ul{
     display: flex;
     flex-direction: row;
+
 }
 ul form {
     width:100%;
+
 }
 ul form input {
     height:7vw;
     width:90%;
     text-align: center;
     font-size: 3em;
-    color:azure;
-    background-color: black;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 10px 0 10px 10px ;
+    text-shadow: -1px -1px black, 1px 1px white;
+    -webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	-o-border-radius: 7px;
+	border-radius: 7px;
+    box-shadow: 0 .2em gray; 
+
+    background-color: lightgray;
+    color: gray;
+
 }
