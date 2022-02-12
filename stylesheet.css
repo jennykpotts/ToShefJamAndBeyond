@@ -36,6 +36,7 @@ ul form {
     
 }
 ul form input {
+    margin-top: 5%;
     height:3em;
     width:90%;
     text-align: center;
