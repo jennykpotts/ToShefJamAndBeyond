@@ -1,12 +1,13 @@
-"use strict";
+const imgs = ['Rocket.png', 'Rocket1.png', 'Rocket2.png', 'Spaceship.png', 'Spaceship1.png', 'Spaceship2.png'];
+const background = document.getElementById("spaceships");
 
-const canvas = document.getElementById("customiseCanvas");
-const ctx = canvas.getContext("2d");
-var img = new Image();
-
-img.src="Spaceship Y-LB-B.png";
-img.onload = function chooseSpaceship(){ 
-    ctx.drawImage(img,0,0); 
-};
-
-
+let currIdx = 0;
+background.src = imgs[currIdx % 6];
+document.querySelector(".prev").addEventListener("click", () => {
+    currIdx--; 
+    background.src = imgs[currIdx % 6];
+});
+document.querySelector(".next").addEventListener("click", () => {
+    currIdx++; 
+    background.src = imgs[currIdx % 6];
+});

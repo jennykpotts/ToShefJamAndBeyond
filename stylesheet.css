@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 canvas {
     background-image: src;
     background-color: transparent;  
@@ -11,29 +16,30 @@ section.canvas {
     align-items: center;
     padding: 0%;
 }
-.customCanvas {
-    width:40%;
-    height:50%;
-    margin-left: 30%;
+.customSpaceship {
+    width: 50%;
+    margin: 0 auto;
+}
+.customSpaceship img {
+    width: 30%;
+}
+.switchSpaceships {
+    margin-top: 2em;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 .customiseButtons {
-    display: inline-block;
-    cursor: pointer;
-    height: 40px;
-    margin-left: 40px;
-    margin-right: 40px;
     position: relative;
     line-height: 2.5em;
-    padding-left: 1em;
-    padding-right: 2em;
     background: white;
     color: black;
+    text-align: center;
+    margin: 0 5em;
 }
 
-body, html {
-    height:100%;
-}
 body {
+    height: 100vh;
     text-align: center;
     background-image: url('starrybackground.jpg');
     background-position: center;
