@@ -56,13 +56,14 @@ function generateSpaceship()
 }
 
 let onScreenPlanets = [1];
+let limit=1;
 function planets(){
     for (let planetCount = 0; planetCount< onScreenPlanets.length-1 ; planetCount++){
         //spawn planet from list
         //move planet from list
     }
-    if (onScreenPlanets=null || onScreenPlanets.slice(-1)){
-        //Add new planet to list
+    if (onScreenPlanets=null || onScreenPlanets.slice(-1).getTopY>limit){
+        addPlanet();
         //Spawn new planet
     }
 
@@ -79,6 +80,10 @@ function addPlanet(){
 function randomImageGenerator(){
     var number=Math.floor(Math.random() * 5);
     return number;
+}
+
+function deletePlanet(){
+    onScreenPlanets.shift();
 }
 
     
