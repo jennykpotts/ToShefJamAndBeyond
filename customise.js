@@ -6,24 +6,34 @@ class spaceship{
     constructor(image) {
         this.image = image;
     }
-    static image(){
+    static setimage(image){
+        this.image=image
+    }
+
+    static getimage(){
         return this.image
     }
 }
 
 let currIdx = 0;
 background.src = imgs[currIdx % 6];
-var currentSpaceship=new spaceship(imgs[currIdx % 6]);
 document.querySelector(".prev").addEventListener("click", () => {
     currIdx--; 
     background.src = imgs[((currIdx % 6) + 6) % 6];
-    console.log(imgs[((currIdx % 6) + 6) % 6]);
-    spaceship.image()=imgs[currIdx % 6];
 
 });
 document.querySelector(".next").addEventListener("click", () => {
     currIdx++; 
     background.src = imgs[((currIdx % 6) + 6) % 6];
-    spaceship.image()=imgs[currIdx % 6];
 
+});
+document.querySelector(".gotogame").addEventListener("click", () =>{
+    console.log("called");
+
+    window.location.href = "playgame.html?id="+currIdx;
+
+});
+
+document.querySelector(".gotohome").addEventListener("click",() =>{
+    window.location.href="mainpage.html"
 });

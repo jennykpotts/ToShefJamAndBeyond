@@ -57,11 +57,9 @@ ul{
     flex-direction: row;
 
 }
-ul form {
+
+ul button {
     width:97%;
-    
-}
-ul form input {
     margin-top: 5%;
     height:3em;
     width:90%;
@@ -79,5 +77,20 @@ ul form input {
     box-shadow: 0 .2em darkblue;
     background-color: black;
     color: yellow;
+}
+
+#button{
+    position: relative;
+    line-height: 2.5em;
+    background: black;
+    font-family: 'Press Start 2P', cursive;
+    color: yellow;
+    box-shadow:darkblue;
+    text-align: center;
+    margin: 0 5em;
+    border-radius: 7px;
+    width:10%; 
+    cursor: pointer;
+
 }
 
