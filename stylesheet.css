@@ -40,6 +40,7 @@ section.canvas {
     margin: 0 5em;
     border-radius: 7px;
     width:10%; 
+    cursor: pointer;
 }
 
 body {
