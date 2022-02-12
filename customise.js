@@ -2,27 +2,28 @@ const imgs = ['Rocket.png', 'Rocket1.png', 'Rocket2.png', 'Rocket blue.png', 'Ro
 const background = document.getElementById("spaceships");
 
 class spaceship{
-    get image(){
-        return this.image;
-    }
 
-    set image(image){
-        this.image=image;
+    constructor(image) {
+        this.image = image;
+    }
+    static image(){
+        return this.image
     }
 }
 
 let currIdx = 0;
 background.src = imgs[currIdx % 6];
-globalThis.currentSpaceship=new spaceship(imgs[currIdx % 6]);
+var currentSpaceship=new spaceship(imgs[currIdx % 6]);
 document.querySelector(".prev").addEventListener("click", () => {
     currIdx--; 
     background.src = imgs[((currIdx % 6) + 6) % 6];
-    currentSpaceship.image=(imgs[currIdx % 6]);
+    console.log(imgs[((currIdx % 6) + 6) % 6]);
+    spaceship.image()=imgs[currIdx % 6];
 
 });
 document.querySelector(".next").addEventListener("click", () => {
     currIdx++; 
     background.src = imgs[((currIdx % 6) + 6) % 6];
-    currentSpaceship.image=(imgs[currIdx % 6]);
+    spaceship.image()=imgs[currIdx % 6];
 
 });

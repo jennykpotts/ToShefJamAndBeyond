@@ -4,6 +4,7 @@
 //             || window.webkitRequestAnimationFrame
 //             || window.mozRequestAnimationFrame
 //             || function(callback) { window.setTimeout(callback, 1000 / 60); };
+
 class planet{
 
     constructor(img,topx,topy){
@@ -39,10 +40,11 @@ class planet{
     }
 }
 
-    var currentSpaceship = new planet("Rocket.png", 1300, 400);
-    var canvas = document.getElementById('my_canvas');
-    var context = canvas.getContext('2d');
-    document.createElement(currentSpaceship.getImg());
+    
+    
+
+
+
 //     var looping = true;
 //     var totalSeconds = 0;
 
