@@ -40,6 +40,21 @@ class planet{
 
 var intervalid=window.setInterval(planets,500);
 
+
+var canvas = document.getElementById('my_canvas'),
+context = canvas.getContext('2d');
+
+generateSpaceship();
+
+function generateSpaceship()
+{
+  spaceship = new Image();
+  spaceship.src = imgs[spaceshipId];
+  spaceship.onload = function(){
+    context.drawImage(spaceship, 0, 0);
+  }
+}
+
 let onScreenPlanets = [1];
 function planets(){
     for (let planetCount = 0; planetCount< onScreenPlanets.length-1 ; planetCount++){
@@ -57,11 +72,13 @@ function planets(){
 }
 
 function addPlanet(){
-    onScreenPlanets.push()
+    var newPlanet=new planet(planetImgs[randomImageGenerator]); //Doesnt work because don't have canvas width/height
+    onScreenPlanets.push(newPlanet);
 }
 
 function randomImageGenerator(){
-
+    var number=Math.floor(Math.random() * 5);
+    return number;
 }
 
     
