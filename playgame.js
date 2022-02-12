@@ -74,6 +74,10 @@ function randomImageGenerator(){
     return Math.floor(Math.random() * 5);
 }
 
+function deletePlanet(){
+    onScreenPlanets.shift();
+}
+
     
 var canvas = document.getElementById('my_canvas'),
 context = canvas.getContext('2d');
