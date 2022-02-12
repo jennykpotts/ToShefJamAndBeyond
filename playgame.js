@@ -4,7 +4,12 @@
 //             || window.webkitRequestAnimationFrame
 //             || window.mozRequestAnimationFrame
 //             || function(callback) { window.setTimeout(callback, 1000 / 60); };
+<<<<<<< HEAD
 /**class planet{
+=======
+
+class planet{
+>>>>>>> 9acf9d760e00603fe9cf89956c8f64a4581b233a
 
     constructor(img,topx,topy){
         this.img=img;
@@ -38,10 +43,63 @@
         setTopy(this.bottomx-=15);
     }
 }
+<<<<<<< HEAD
     var currentSpaceship = new planet("Rocket.png", 1300, 400);
     var canvas = document.getElementById('my_canvas');
     var context = canvas.getContext('2d');
     
+=======
+
+class spaceship{
+    
+    constructor(image) {
+        this.image = image;
+    }
+    getImage(){
+        return this.image;
+    }
+
+    setImage(image){
+        this.image=image;
+    }
+}
+
+    
+
+const imgs = ['Rocket.png', 'Rocket1.png', 'Rocket2.png', 'Rocket blue.png', 'Rocket Greyscale.png', 'Rocket P-G.png'];
+const background = document.getElementById("spaceships");
+
+let currIdx = 0;
+//background.src = imgs[currIdx % 6];
+var currentSpaceship = new spaceship(imgs[currIdx % 6]);
+document.querySelector(".prev").addEventListener("click", () => {
+    currIdx--; 
+    background.src = imgs[((currIdx % 6) + 6) % 6];
+    currentSpaceship.setImage(imgs[currIdx % 6]);
+
+});
+document.querySelector(".next").addEventListener("click", () => {
+    currIdx++; 
+    background.src = imgs[((currIdx % 6) + 6) % 6];
+    currentSpaceship.setImage(imgs[currIdx % 6]);
+
+});
+
+    //var currentSpaceship = new spaceship(currentSpaceship.getImg());
+    var canvas = document.getElementById('my_canvas');
+    var context = canvas.getContext('2d');
+    //context.drawImage(currentSpaceship.getImage());
+    context.drawImage(imgs[currIdx % 6]);
+    
+    //var currentImg = currentSpaceship.getImage();
+    //document.createElement(currentSpaceship.getImg());
+
+    
+    
+
+
+
+>>>>>>> 9acf9d760e00603fe9cf89956c8f64a4581b233a
 //     var looping = true;
 //     var totalSeconds = 0;
 
@@ -139,4 +197,7 @@
     img.onload = imageLoaded;
 */
 //}());
+<<<<<<< HEAD
 document.createElement(spaceship.image());
+=======
+>>>>>>> 9acf9d760e00603fe9cf89956c8f64a4581b233a
