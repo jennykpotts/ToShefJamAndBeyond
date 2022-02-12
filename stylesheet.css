@@ -10,6 +10,12 @@ section.canvas {
     align-items: center;
     padding: 2%;
 }
+.customCanvas {
+    background-color: black;
+    width:40%;
+    height:50%;
+    margin-left: 32%;
+}
 body, html {
     height:100%;
 }
