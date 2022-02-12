@@ -2,11 +2,15 @@ const imgs = ['Rocket.png', 'Rocket1.png', 'Rocket2.png', 'Rocket blue.png', 'Ro
 const background = document.getElementById("spaceships");
 
 class spaceship{
-    get image(){
+
+    constructor(image) {
+        this.image = image;
+    }
+    getImage(){
         return this.image;
     }
 
-    set image(image){
+    setImage(image){
         this.image=image;
     }
 }
@@ -17,12 +21,12 @@ globalThis.currentSpaceship=new spaceship(imgs[currIdx % 6]);
 document.querySelector(".prev").addEventListener("click", () => {
     currIdx--; 
     background.src = imgs[((currIdx % 6) + 6) % 6];
-    currentSpaceship.image=(imgs[currIdx % 6]);
+    currentSpaceship.setImage(imgs[currIdx % 6]);
 
 });
 document.querySelector(".next").addEventListener("click", () => {
     currIdx++; 
     background.src = imgs[((currIdx % 6) + 6) % 6];
-    currentSpaceship.image=(imgs[currIdx % 6]);
+    currentSpaceship.setImage(imgs[currIdx % 6]);
 
 });
