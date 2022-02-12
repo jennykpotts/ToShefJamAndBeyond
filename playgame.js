@@ -21,8 +21,12 @@
     var lastFrameTime = 0;
 
     function start() {
-        lastFrameTime = Date.now();
-        requestAnimationFrame(loop);
+        looping = looping;
+
+        if (looping) {
+            lastFrameTime = Date.now();
+            requestAnimationFrame(loop);
+        }
     }
 
     function loop() {
