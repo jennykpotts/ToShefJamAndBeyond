@@ -1,13 +1,48 @@
 //Scrolling background image for canvas
-(function() {
+//(function() {
 //     window.requestAnimationFrame = window.requestAnimationFrame
 //             || window.webkitRequestAnimationFrame
 //             || window.mozRequestAnimationFrame
 //             || function(callback) { window.setTimeout(callback, 1000 / 60); };
+class planet{
 
- var canvas = document.getElementById('my_canvas');
- var context = canvas.getContext('2d');
- context.createElement(currentSpaceship.image());
+    constructor(img,topx,topy){
+        this.img=img;
+        this.topx=topx;
+        this.topy=topy;
+
+    }
+    getImg() {
+        return this.img;
+    }
+
+    getTopx() {
+        return this.topx;
+    }
+    getTopy(){
+        return this.topy;
+
+    }
+    setImg(img){
+        this.img = img;
+    }
+    setTopx(topx){
+        this.topx = topx;
+    }
+    setTopy(topy){
+        this.topy = topy;
+    }
+
+    moveplanet(){
+        setTopx(this.topx-=15);
+        setTopy(this.bottomx-=15);
+    }
+}
+
+    var currentSpaceship = new planet("Rocket.png", 1300, 400);
+    var canvas = document.getElementById('my_canvas');
+    var context = canvas.getContext('2d');
+    document.createElement(currentSpaceship.getImg());
 //     var looping = true;
 //     var totalSeconds = 0;
 
@@ -97,9 +132,11 @@
 //     */
 // }());
 
+/*
     var canvas = document.getElementById('my_canvas');
     var context = canvas.getContext('2d');
 
     var img = new Image();
     img.onload = imageLoaded;
-    
+*/
+//}());
