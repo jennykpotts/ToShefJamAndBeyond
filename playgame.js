@@ -68,6 +68,8 @@ function randomImageGenerator(){
     
 var canvas = document.getElementById('my_canvas'),
 context = canvas.getContext('2d');
+let x = 0;
+let y = 0;
 
 generateSpaceship();
 
@@ -76,8 +78,25 @@ function generateSpaceship()
   spaceship = new Image();
   spaceship.src = imgs[spaceshipId];
   spaceship.onload = function(){
-    context.drawImage(spaceship, 0, 0);
+    context.drawImage(spaceship, x, y, 12, 6);
   }
+
+  qspaceship = new Image();
+  qspaceship.src = imgs[4];
+  qspaceship.onload = function(){
+    context.drawImage(qspaceship, 10, 10, 12, 6);
+  }
+}
+
+document.onkeydown = function(e) {
+    if(e.keyCode === 38 && y >= 0) {
+        y -= 5;
+    }
+    if(e.keyCode === 40) {
+        y+=5;
+    }
+    canvas.width=canvas.width;
+    context.drawImage(spaceship,x,y,12,6);
 }
 
 //Scrolling background image for canvas
