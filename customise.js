@@ -5,9 +5,9 @@ let currIdx = 0;
 background.src = imgs[currIdx % 6];
 document.querySelector(".prev").addEventListener("click", () => {
     currIdx--; 
-    background.src = imgs[currIdx % 6];
+    background.src = imgs[((currIdx % 6) + 6) % 6];
 });
 document.querySelector(".next").addEventListener("click", () => {
     currIdx++; 
-    background.src = imgs[currIdx % 6];
+    background.src = imgs[((currIdx % 6) + 6) % 6];
 });
