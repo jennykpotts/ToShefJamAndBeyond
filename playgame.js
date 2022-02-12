@@ -55,8 +55,9 @@ function generateSpaceship()
   }
 }
 
+let onScreenPlanets = [1];
 function planets(){
-    for (var planetCount=0; count<onScreenPlanets.length-1;planetCount++){
+    for (let planetCount = 0; planetCount< onScreenPlanets.length-1 ; planetCount++){
         //spawn planet from list
         //move planet from list
     }
@@ -80,6 +81,12 @@ function randomImageGenerator(){
     return number;
 }
 
+    
+    
+var canvas = document.getElementById('my_canvas'),
+context = canvas.getContext('2d');
+
+generateSpaceship();
 
 
 //Scrolling background image for canvas
