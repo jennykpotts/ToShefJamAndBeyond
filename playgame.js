@@ -1,34 +1,3 @@
-window.onload = event => {
-    startGame();
-};
-
-function startGame() {  
-    //myGameArea.start();
-    scroll();
-}
-
-//let canvas = document.getElementById("my_canvas");
-//let context = canvas.getContext("2d");
-//img_width = "starrybackground.jpg".width;
-//let totalSeconds = 0;
-
-/*
-function draw(delta) {
-    totalSeconds += delta;
-   
-    var vx = 100; // the background scrolls with a speed of 100 pixels/sec
-    var numImages = Math.ceil(canvas.width / img_width) + 1;
-    var xpos = totalSeconds * vx % img_width;
-   
-    context.save();
-    context.translate(-xpos, 0);
-    for (var i = 0; i < numImages; i++) {
-        context.drawImage("starrybackground.jpg", i * img_width, 0);
-    }
-    context.restore();
-}
-*/
-
 (function() {
     window.requestAnimationFrame = window.requestAnimationFrame
             || window.webkitRequestAnimationFrame
@@ -37,26 +6,21 @@ function draw(delta) {
 
     var canvas = document.getElementById('my_canvas');
     var context = canvas.getContext('2d');
-    var looping = false;
+    var looping = true;
     var totalSeconds = 0;
 
     var img = new Image();
-    img.onload = imageLoaded();
-    img.src = 'starrybackground.jpg';
+    img.onload = imageLoaded;
+    img.src = 'darkblue.jpg';
 
     function imageLoaded() {
         draw(0);
-
-        var btn = document.getElementById('btnStart');
-        btn.addEventListener('click', function() {
-            startStop();
-        });
+        start();
     }
-
     var lastFrameTime = 0;
 
-    function startStop() {
-        looping = !looping;
+    function start() {
+        looping = looping;
 
         if (looping) {
             lastFrameTime = Date.now();
@@ -68,7 +32,6 @@ function draw(delta) {
         if (!looping) {
             return;
         }
-
         requestAnimationFrame(loop);
 
         var now = Date.now();
@@ -77,11 +40,10 @@ function draw(delta) {
         draw(deltaSeconds);
     }
 
-
     function draw(delta) {
         totalSeconds += delta;
    
-        var vx = 100; // the background scrolls with a speed of 100 pixels/sec
+        var vx = 30; // background scroll speed in pixels/sec
         var numImages = Math.ceil(canvas.width / img.width) + 1;
         var xpos = totalSeconds * vx % img.width;
    
@@ -93,15 +55,3 @@ function draw(delta) {
         context.restore();
     }
 }());
-
-/*
-var myGameArea = {  
-    canvas : document.createElement("canvas"),  
-    start : function() {  
-        this.canvas.width = 1400;  
-        this.canvas.height = 650;  
-        this.context = this.canvas.getContext("2d");  
-        document.body.insertBefore(this.canvas, document.body.childNodes[0]);  
-    }  
-}
-*/
