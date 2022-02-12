@@ -1,17 +1,17 @@
 canvas {
+    background-image: src;
     background-color: transparent;  
     width: 100%;
     height: 100%;
 }  
 
 section.canvas {
-    width: 98%;
-    height: 98%;
+    width: 100%;
+    height: 100%;
     align-items: center;
-    padding: 2%;
+    padding: 0%;
 }
 .customCanvas {
-    background-color: black;
     width:40%;
     height:50%;
     margin-left: 30%;

@@ -1,33 +1,6 @@
 window.onload = event => {
-    startGame();
-};
-
-function startGame() {  
-    //myGameArea.start();
     scroll();
-}
-
-//let canvas = document.getElementById("my_canvas");
-//let context = canvas.getContext("2d");
-//img_width = "starrybackground.jpg".width;
-//let totalSeconds = 0;
-
-/*
-function draw(delta) {
-    totalSeconds += delta;
-   
-    var vx = 100; // the background scrolls with a speed of 100 pixels/sec
-    var numImages = Math.ceil(canvas.width / img_width) + 1;
-    var xpos = totalSeconds * vx % img_width;
-   
-    context.save();
-    context.translate(-xpos, 0);
-    for (var i = 0; i < numImages; i++) {
-        context.drawImage("starrybackground.jpg", i * img_width, 0);
-    }
-    context.restore();
-}
-*/
+};
 
 (function() {
     window.requestAnimationFrame = window.requestAnimationFrame
@@ -42,7 +15,7 @@ function draw(delta) {
 
     var img = new Image();
     img.onload = imageLoaded();
-    img.src = 'starrybackground.jpg';
+    img.src = 'sqaurebackground.jpg';
 
     function imageLoaded() {
         draw(0);
@@ -81,7 +54,7 @@ function draw(delta) {
     function draw(delta) {
         totalSeconds += delta;
    
-        var vx = 100; // the background scrolls with a speed of 100 pixels/sec
+        var vx = 30; // the background scrolls with a speed of 30 pixels/sec
         var numImages = Math.ceil(canvas.width / img.width) + 1;
         var xpos = totalSeconds * vx % img.width;
    
@@ -93,15 +66,3 @@ function draw(delta) {
         context.restore();
     }
 }());
-
-/*
-var myGameArea = {  
-    canvas : document.createElement("canvas"),  
-    start : function() {  
-        this.canvas.width = 1400;  
-        this.canvas.height = 650;  
-        this.context = this.canvas.getContext("2d");  
-        document.body.insertBefore(this.canvas, document.body.childNodes[0]);  
-    }  
-}
-*/
