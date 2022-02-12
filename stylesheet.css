@@ -38,6 +38,8 @@ section.canvas {
     box-shadow:darkblue;
     text-align: center;
     margin: 0 5em;
+    border-radius: 7px;
+    width:10%;
 }
 
 body {
