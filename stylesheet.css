@@ -32,8 +32,10 @@ section.canvas {
 .customiseButtons {
     position: relative;
     line-height: 2.5em;
-    background: white;
-    color: black;
+    background: black;
+    font-family: 'Press Start 2P', cursive;
+    color: yellow;
+    box-shadow:darkblue;
     text-align: center;
     margin: 0 5em;
 }
@@ -79,3 +81,4 @@ ul form input {
     background-color: black;
     color: yellow;
 }
+

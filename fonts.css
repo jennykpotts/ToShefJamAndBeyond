@@ -10,6 +10,10 @@
 .paragraphfont{
     font-family: 'Press Start 2P', cursive;
     color: yellow;
-    font-size: 1em
+    font-size: 1em;
     
+}
+
+.spacing{
+    padding-top: 5%
 }

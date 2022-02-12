@@ -1,4 +1,4 @@
-const imgs = ['Rocket.png', 'Rocket1.png', 'Rocket2.png', 'Spaceship.png', 'Spaceship1.png', 'Spaceship2.png'];
+const imgs = ['Rocket.png', 'Rocket1.png', 'Rocket2.png', 'Rocket blue.png', 'Rocket Greyscale.png', 'Rocket P-G.png'];
 const background = document.getElementById("spaceships");
 
 let currIdx = 0;
