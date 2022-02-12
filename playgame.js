@@ -1,12 +1,13 @@
 //Scrolling background image for canvas
-// (function() {
+(function() {
 //     window.requestAnimationFrame = window.requestAnimationFrame
 //             || window.webkitRequestAnimationFrame
 //             || window.mozRequestAnimationFrame
 //             || function(callback) { window.setTimeout(callback, 1000 / 60); };
 
-//     var canvas = document.getElementById('my_canvas');
-//     var context = canvas.getContext('2d');
+ var canvas = document.getElementById('my_canvas');
+ var context = canvas.getContext('2d');
+ context.createElement(currentSpaceship.image());
 //     var looping = true;
 //     var totalSeconds = 0;
 
@@ -95,3 +96,5 @@
 //     }
 //     */
 // }());
+
+}());

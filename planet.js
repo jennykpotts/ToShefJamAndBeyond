@@ -26,7 +26,7 @@ class planet{
     }
 
     moveplanet(){
-        this.topx+=15;
-        this.bottomx+=15;
+        this.topx-=15;
+        this.bottomx-=15;
     }
 }
