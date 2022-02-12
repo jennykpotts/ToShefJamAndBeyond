@@ -17,7 +17,7 @@ class spaceship{
 
 let currIdx = 0;
 background.src = imgs[currIdx % 6];
-globalThis.currentSpaceship=new spaceship(imgs[currIdx % 6]);
+var currentSpaceship=new spaceship(imgs[currIdx % 6]);
 document.querySelector(".prev").addEventListener("click", () => {
     currIdx--; 
     background.src = imgs[((currIdx % 6) + 6) % 6];
