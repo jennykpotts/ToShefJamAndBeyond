@@ -1,7 +1,3 @@
-window.onload = event => {
-    scroll();
-};
-
 (function() {
     window.requestAnimationFrame = window.requestAnimationFrame
             || window.webkitRequestAnimationFrame
@@ -10,26 +6,21 @@ window.onload = event => {
 
     var canvas = document.getElementById('my_canvas');
     var context = canvas.getContext('2d');
-    var looping = false;
+    var looping = true;
     var totalSeconds = 0;
 
     var img = new Image();
-    img.onload = imageLoaded();
-    img.src = 'sqaurebackground.jpg';
+    img.onload = imageLoaded;
+    img.src = 'darkblue.jpg';
 
     function imageLoaded() {
         draw(0);
-
-        var btn = document.getElementById('btnStart');
-        btn.addEventListener('click', function() {
-            startStop();
-        });
+        start();
     }
-
     var lastFrameTime = 0;
 
-    function startStop() {
-        looping = !looping;
+    function start() {
+        looping = looping;
 
         if (looping) {
             lastFrameTime = Date.now();
@@ -41,7 +32,6 @@ window.onload = event => {
         if (!looping) {
             return;
         }
-
         requestAnimationFrame(loop);
 
         var now = Date.now();
@@ -50,11 +40,10 @@ window.onload = event => {
         draw(deltaSeconds);
     }
 
-
     function draw(delta) {
         totalSeconds += delta;
    
-        var vx = 30; // the background scrolls with a speed of 30 pixels/sec
+        var vx = 30; // background scroll speed in pixels/sec
         var numImages = Math.ceil(canvas.width / img.width) + 1;
         var xpos = totalSeconds * vx % img.width;
    
