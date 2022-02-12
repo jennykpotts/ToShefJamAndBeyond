@@ -95,3 +95,10 @@
 //     }
 //     */
 // }());
+
+    var canvas = document.getElementById('my_canvas');
+    var context = canvas.getContext('2d');
+
+    var img = new Image();
+    img.onload = imageLoaded;
+    
