@@ -1,13 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed:wght@700&family=Press+Start+2P&family=Shizuru&display=swap');
 
 .titlefont{
-    font-family: 'Encode Sans Condensed', sans-serif;
-    font-weight: 700;
+    font-family: 'Press Start 2P', cursive;
     font-size:2em;
+    color:yellow;
 }
 
 .paragraphfont{
-    font-family: 'Encode Sans Condensed', sans-serif;
-    background-color: white;
+    font-family: 'Press Start 2P', cursive;
+    color: yellow;
+    font-size: 1em
     
 }

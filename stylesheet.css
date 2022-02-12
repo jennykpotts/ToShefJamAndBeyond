@@ -34,7 +34,8 @@ ul form input {
     height:7vw;
     width:90%;
     text-align: center;
-    font-size: 3em;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2em;
     cursor: pointer;
     font-weight: bold;
     padding: 10px 0 10px 10px ;
@@ -45,7 +46,7 @@ ul form input {
 	border-radius: 7px;
     box-shadow: 0 .2em gray; 
 
-    background-color: lightgray;
-    color: gray;
+    background-color: black;
+    color: yellow;
 
 }
