@@ -1,6 +1,6 @@
 
 const imgs = ['Rocket.png', 'Rocket1.png', 'Rocket2.png', 'Rocket blue.png', 'Rocket Greyscale.png', 'Rocket P-G.png'];
-const planets=['redplanet.png','purpleplanet.png','gasgiant.png','iceplanet.png','blueplanet.png'];
+const planetImgs=['redplanet.png','purpleplanet.png','gasgiant.png','iceplanet.png','blueplanet.png'];
 const spaceshipId = window.location.href.charAt(window.location.href.length - 1);
 const onScreenPlanets=[]
 console.log(imgs[spaceshipId])
@@ -55,6 +55,14 @@ function planets(){
     if (onScreenPlanets[0].getTopx<=0 && onScreenPlanets!=0){
         //Delete planet from the array meaning it won't spawn again
     }
+}
+
+function addPlanet(){
+    onScreenPlanets.push()
+}
+
+function randomImageGenerator(){
+
 }
 
     
