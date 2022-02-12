@@ -4,7 +4,7 @@
 //             || window.webkitRequestAnimationFrame
 //             || window.mozRequestAnimationFrame
 //             || function(callback) { window.setTimeout(callback, 1000 / 60); };
-class planet{
+/**class planet{
 
     constructor(img,topx,topy){
         this.img=img;
@@ -38,11 +38,10 @@ class planet{
         setTopy(this.bottomx-=15);
     }
 }
-
     var currentSpaceship = new planet("Rocket.png", 1300, 400);
     var canvas = document.getElementById('my_canvas');
     var context = canvas.getContext('2d');
-    document.createElement(currentSpaceship.getImg());
+    
 //     var looping = true;
 //     var totalSeconds = 0;
 
@@ -140,3 +139,4 @@ class planet{
     img.onload = imageLoaded;
 */
 //}());
+document.createElement(spaceship.image());
