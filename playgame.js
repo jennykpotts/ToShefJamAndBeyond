@@ -2,8 +2,6 @@
 const imgs = ['Rocket.png', 'Rocket1.png', 'Rocket2.png', 'Rocket blue.png', 'Rocket Greyscale.png', 'Rocket P-G.png'];
 const planetImgs=['redplanet.png','purpleplanet.png','gasgiant.png','iceplanet.png','blueplanet.png'];
 const spaceshipId = window.location.href.charAt(window.location.href.length - 1);
-const onScreenPlanets=[]
-console.log(imgs[spaceshipId])
 
 class planet{
 
@@ -57,6 +55,7 @@ function planets(){
     }
 }
 
+<<<<<<< HEAD
 function addPlanet(){
     onScreenPlanets.push()
 }
@@ -67,8 +66,21 @@ function randomImageGenerator(){
 
     
     
+=======
+var canvas = document.getElementById('my_canvas'),
+context = canvas.getContext('2d');
+>>>>>>> dcd93e7ea31438d18e1332e55a514918771430b1
 
+generateSpaceship();
 
+function generateSpaceship()
+{
+  spaceship = new Image();
+  spaceship.src = imgs[spaceshipId];
+  spaceship.onload = function(){
+    context.drawImage(spaceship, 0, 0);
+  }
+}
 
 //Scrolling background image for canvas
 //(function() {
