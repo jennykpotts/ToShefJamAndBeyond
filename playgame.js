@@ -44,20 +44,22 @@
 //     function draw(delta) {
 //         totalSeconds += delta;
    
-//         var vx = 30; // background scroll speed in pixels/sec
-//         var numImages = Math.ceil(canvas.width / img.width) + 1;
-//         var xpos = totalSeconds * vx % img.width;
+    //     var vx = 30; // background scroll speed in pixels/sec
+    //     var numImages = Math.ceil(canvas.width / img.width) + 1;
+    //     //var numImages = 100;
+    //     var xpos = totalSeconds * vx % img.width;
    
-//         context.save();
-//         context.translate(-xpos, 0);
-//         for (var i = 0; i < numImages; i++) {
-//             context.drawImage(img, i * img.width, 0, photo.width * 0.2, photo.height * 0.4);
-//         }
-//         context.restore();
-//     }
+    //     context.save();
+    //     context.translate(-xpos, 0);
+    //     for (var i = 0; i < numImages; i++) {
+    //         context.drawImage(img, i * img.width, 0, img.width * 0.2, img.height * 0.3);
+    //     }
+    //     context.restore();
+    // }
 
-//     //Display planets on canvas
-//     var imgArr = ["blueplanet.png", "gasgiant.png", "iceplanet.png", "purpleplanet.png", "redplanet.png"];
+    /*
+    //Display planets on canvas
+    var imgArr = ["blueplanet.png", "gasgiant.png", "iceplanet.png", "purpleplanet.png", "redplanet.png"];
 
 //     var photo = new Image();
 //     photo.onload = function() {
@@ -65,8 +67,8 @@
 //     }
 //     photo.src = "blueplanet.png";
     
-//     //displayImg();
-
+    //displayImg();
+    */
 
 //     /*
 //     function displayImg(){
