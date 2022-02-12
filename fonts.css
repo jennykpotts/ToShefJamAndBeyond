@@ -5,12 +5,17 @@
     font-size:2em;
     color:yellow;
     text-align: center;
+    transform:perspective(300px) rotateX(20deg);
+    margin: 0 8% 0;
+
 }
 
 .paragraphfont{
     font-family: 'Press Start 2P', cursive;
     color: yellow;
     font-size: 1em;
+    transform:perspective(300px) rotateX(20deg);
+    margin: 0 8% 0;
     
 }
 
