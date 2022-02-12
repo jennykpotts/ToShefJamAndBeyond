@@ -21,14 +21,19 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+.paragraphfont{ 
+    transform:perspective(300px) rotateX(20deg);
+    margin: 0 8% 0;
+    
+}
 ul{
     display: flex;
     flex-direction: row;
 
 }
 ul form {
-    width:100%;
-
+    width:97%;
+    
 }
 ul form input {
     height:7vw;
@@ -45,8 +50,6 @@ ul form input {
 	-o-border-radius: 7px;
 	border-radius: 7px;
     box-shadow: 0 .2em darkblue;
-
     background-color: black;
     color: yellow;
-
 }
