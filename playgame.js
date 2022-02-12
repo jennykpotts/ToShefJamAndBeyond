@@ -97,4 +97,13 @@
 //     */
 // }());
 
+<<<<<<< HEAD
 }());
+=======
+    var canvas = document.getElementById('my_canvas');
+    var context = canvas.getContext('2d');
+
+    var img = new Image();
+    img.onload = imageLoaded;
+    
+>>>>>>> 3392b1b46b235c94f47fe1b3d4b2f539353286b8
