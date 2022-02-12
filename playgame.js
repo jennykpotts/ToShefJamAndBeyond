@@ -3,7 +3,9 @@ const imgs = ['Rocket.png', 'Rocket1.png', 'Rocket2.png', 'Rocket blue.png', 'Ro
 const planetImgs=['redplanet.png','purpleplanet.png','gasgiant.png','iceplanet.png','blueplanet.png'];
 const spaceshipId = window.location.href.charAt(window.location.href.length - 1);
 
-class planet{
+let onScreenPlanets = [];
+
+class Planet{
 
     constructor(img,topx,topy){
         this.img=img;
@@ -44,44 +46,34 @@ var intervalid=window.setInterval(planets,500);
 var canvas = document.getElementById('my_canvas'),
 context = canvas.getContext('2d');
 
-generateSpaceship();
 
-function generateSpaceship()
-{
-  spaceship = new Image();
-  spaceship.src = imgs[spaceshipId];
-  spaceship.onload = function(){
-    context.drawImage(spaceship, 0, 0);
-  }
-}
-
-let onScreenPlanets = [1];
 function planets(){
-    for (let planetCount = 0; planetCount< onScreenPlanets.length-1 ; planetCount++){
+    //for (let planetCount = 0; planetCount< onScreenPlanets.length-1 ; planetCount++){
         //spawn planet from list
         //move planet from list
-    }
-    if (onScreenPlanets=null || onScreenPlanets.slice(-1)){
+    //}
+    //if (onScreenPlanets=null || onScreenPlanets.slice(-1)){
         //Add new planet to list
         //Spawn new planet
-    }
+    //}
 
-    if (onScreenPlanets[0].getTopx<=0 && onScreenPlanets!=0){
+    //if (onScreenPlanets[0].getTopx<=0 && onScreenPlanets!=0){
         //Delete planet from the array meaning it won't spawn again
-    }
+    //}
+
+
 }
 
 function addPlanet(){
-    var newPlanet=new planet(planetImgs[randomImageGenerator]); //Doesnt work because don't have canvas width/height
+    var newPlanet=new Planet(planetImgs[randomImageGenerator()], 5,5); //Doesnt work because don't have canvas width/height
     onScreenPlanets.push(newPlanet);
+    return newPlanet;
 }
 
 function randomImageGenerator(){
-    var number=Math.floor(Math.random() * 5);
-    return number;
+    return Math.floor(Math.random() * 5);
 }
 
-    
     
 var canvas = document.getElementById('my_canvas'),
 context = canvas.getContext('2d');
@@ -89,6 +81,7 @@ let x = 0;
 let y = 0;
 
 generateSpaceship();
+generatePlanet();
 
 function generateSpaceship()
 {
@@ -97,13 +90,17 @@ function generateSpaceship()
   spaceship.onload = function(){
     context.drawImage(spaceship, x, y, 12, 6);
   }
-
-  qspaceship = new Image();
-  qspaceship.src = imgs[4];
-  qspaceship.onload = function(){
-    context.drawImage(qspaceship, 10, 10, 12, 6);
-  }
 }
+
+function generatePlanet() {
+    let currPlanet = addPlanet();
+    planet = new Image();
+    planet.src = currPlanet.img;
+    planet.onload = function() {
+        context.drawImage(planet, currPlanet.topy,currPlanet.topx, 12, 12);
+    }
+    console.log('hi')
+  }
 
 document.onkeydown = function(e) {
     if(e.keyCode === 38 && y >= 0) {
