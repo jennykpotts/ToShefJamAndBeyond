@@ -50,11 +50,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
-.paragraphfont{ 
-    transform:perspective(300px) rotateX(20deg);
-    margin: 0 8% 0;
-    
-}
+
 ul{
     display: flex;
     flex-direction: row;
