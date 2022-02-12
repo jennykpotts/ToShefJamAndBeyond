@@ -55,12 +55,12 @@ body {
 ul{
     display: flex;
     flex-direction: row;
-
+    margin: 0 5em;
 }
 
 ul button {
     width:97%;
-    margin-top: 5%;
+    margin: 5% 2em 0 2em;
     height:3em;
     width:90%;
     text-align: center;
@@ -70,27 +70,8 @@ ul button {
     font-weight: bold;
     padding: 10px 0 10px 10px ;
     text-shadow: -1px -1px black, 1px 1px white;
-    -webkit-border-radius: 7px;
-	-moz-border-radius: 7px;
-	-o-border-radius: 7px;
 	border-radius: 7px;
     box-shadow: 0 .2em darkblue;
     background-color: black;
     color: yellow;
 }
-
-#button{
-    position: relative;
-    line-height: 2.5em;
-    background: black;
-    font-family: 'Press Start 2P', cursive;
-    color: yellow;
-    box-shadow:darkblue;
-    text-align: center;
-    margin: 0 5em;
-    border-radius: 7px;
-    width:10%; 
-    cursor: pointer;
-
-}
-

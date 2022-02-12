@@ -6,7 +6,7 @@
 //             || function(callback) { window.setTimeout(callback, 1000 / 60); };
 const imgs = ['Rocket.png', 'Rocket1.png', 'Rocket2.png', 'Rocket blue.png', 'Rocket Greyscale.png', 'Rocket P-G.png'];
 const spaceshipId = window.location.href.charAt(window.location.href.length - 1);
-console.log(imgs[spaceshipId])
+
 
 class planet{
 
@@ -44,10 +44,19 @@ class planet{
 }
 
 
-    
-    
+var canvas = document.getElementById('my_canvas'),
+context = canvas.getContext('2d');
 
+generateSpaceship();
 
+function generateSpaceship()
+{
+  spaceship = new Image();
+  spaceship.src = imgs[spaceshipId];
+  spaceship.onload = function(){
+    context.drawImage(spaceship, 0, 0);
+  }
+}
 
 //     var looping = true;
 //     var totalSeconds = 0;
