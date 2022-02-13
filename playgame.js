@@ -40,8 +40,8 @@ class Planet {
     }
 }
 
-window.setInterval(planets, 2000 / 60);
-window.setInterval(generatePlanet, 1000);
+const intervalPlanets = window.setInterval(planets, 2000 / 60);
+const intervalGeneratePlanet = window.setInterval(generatePlanet, 1000);
 generateSpaceship()
 
 const canvas = document.getElementById('my_canvas'),
@@ -122,7 +122,9 @@ function planets() {
         
         let epsilon = 10;
         if (currPlanet.topx < epsilon && currPlanet.topy < y + epsilon / 2 && currPlanet.topy > y - epsilon / 2) {
-            location.reload();
+            clearInterval(intervalPlanets);
+            clearInterval(intervalGeneratePlanet);
+            displayText();
         }
     }
 }
@@ -132,3 +134,10 @@ window.addEventListener("load", () => {
     myAudio.play();
 
 })
+
+function displayText() { 
+    document.getElementById("game-over").style.display = "block";
+    // ctx.font = "30px Arial";
+    // ctx.fillText("Hello World", 10, 50);
+    // context.fillText('You lost', canvas.weight/2, canvas.height/2);
+}
