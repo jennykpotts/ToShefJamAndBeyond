@@ -83,12 +83,12 @@ function generateSpaceship()
 }
 
 document.onkeydown = function(e) {
-    if(e.keyCode === 38 && y >= 0) {
+    if(e.keyCode === 38 && y >= 4) {
         y -= 5;
         canvas.width=canvas.width;
         context.drawImage(spaceship,x,y,12,6);
     }
-    if(e.keyCode === 40) {
+    if(e.keyCode === 40 && y<=canvas.height-8) {
         y+=5;
         canvas.width=canvas.width;
         context.drawImage(spaceship,x,y,12,6);
