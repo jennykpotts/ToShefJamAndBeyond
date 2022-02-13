@@ -116,8 +116,6 @@ function planets() {
             context.clearRect(currPlanet.topx, currPlanet.topy, 12, 12);
             onScreenPlanets.shift();
             planetCount += 1;
-            changingPlanetCount = document.getElementById("planetCount");
-            changingPlanetCount.innerHTML = planetCount;
         }
         
         let epsilon = 10;
@@ -137,6 +135,8 @@ window.addEventListener("load", () => {
 
 function displayText() { 
     document.getElementById("game-over").style.display = "block";
+    document.getElementById("game-over").innerHTML=`Game over :( . Your score was: ${planetCount}`;
+    
     // ctx.font = "30px Arial";
     // ctx.fillText("Hello World", 10, 50);
     // context.fillText('You lost', canvas.weight/2, canvas.height/2);
