@@ -126,4 +126,9 @@ function planets() {
         }
     }
 }
+window.addEventListener("load", () => {
+    var myAudio = new Audio('LightYears.mp3');
+    myAudio.loop = true;
+    myAudio.play();
 
+})
