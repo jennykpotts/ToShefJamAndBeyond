@@ -41,8 +41,8 @@ class Planet {
 }
 
 const intervalPlanets = window.setInterval(planets, 2000 / 60);
-const intervalGeneratePlanet = window.setInterval(generatePlanet, 1000);
-generateSpaceship()
+const intervalGeneratePlanet = window.setTimeout(generatePlanet, 1000);
+generateSpaceship();
 
 const canvas = document.getElementById('my_canvas'),
     context = canvas.getContext('2d');
@@ -99,6 +99,9 @@ function generatePlanet() {
     planet.onload = function () {
         context.drawImage(planet, currPlanet.topx, currPlanet.topy, 12, 12);
     }
+
+    window.setTimeout(generatePlanet,Math.max(1000-((planetCount/10)*100),500));
+
 }
 
 function planets() {
@@ -124,6 +127,10 @@ function planets() {
             clearInterval(intervalGeneratePlanet);
             displayText();
         }
+
+
+
+        
     }
 }
 window.addEventListener("load", () => {
