@@ -34,7 +34,6 @@ document.querySelector(".next").addEventListener("click", () => {
 
 });
 document.querySelector(".gotogame").addEventListener("click", () => {
-    console.log("called");
     window.location.href = "playgame.html?id=" + currIdx;
 
 });
