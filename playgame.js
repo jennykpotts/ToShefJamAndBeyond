@@ -19,13 +19,11 @@ class Planet {
     getImg() {
         return this.img;
     }
-
     getTopx() {
         return this.topx;
     }
     getTopy() {
         return this.topy;
-
     }
     setImg(img) {
         this.img = img;
@@ -53,7 +51,6 @@ function addPlanet() {
     var newPlanet = new Planet(planetImgs[randomImageGenerator()], canvas.width + 12, generateYCoordinate());
     onScreenPlanets.push(newPlanet);
     return newPlanet;
-
 }
 
 function randomImageGenerator() {
@@ -65,7 +62,6 @@ function deletePlanet() {
 }
 
 function generateYCoordinate() {
-    //canvas.height = canvas.height;
     return Math.floor(Math.random() * (canvas.height - 12));
 }
 
@@ -78,14 +74,14 @@ function generateSpaceship() {
     spaceship = new Image();
     spaceship.src = imgs[spaceshipId];
     spaceship.onload = function () {
-        context.clearRect(x,y-speed,12,6+speed);
+        context.clearRect(x, y - speed, 12, 6 + speed);
         context.drawImage(spaceship, x, y, 12, 6);
     }
 }
 
 document.onkeydown = function (e) {
     if (e.keyCode === 38 && y >= 4) {
-        context.clearRect(x,y,12,6);
+        context.clearRect(x, y, 12, 6);
         y -= speed;
         context.drawImage(spaceship, x, y, 12, 6);
     }
@@ -106,37 +102,22 @@ function generatePlanet() {
 }
 
 function planets() {
-    //for (let planetCount = 0; planetCount< onScreenPlanets.length-1 ; planetCount++){
-    //spawn planet from list
-    //move planet from list
-    //}
-    //if (onScreenPlanets=null || onScreenPlanets.slice(-1)){
-    //Add new planet to list
-    //Spawn new planet
-    //}
-
-    //if (onScreenPlanets[0].getTopx<=0 && onScreenPlanets!=0){
-    //Delete planet from the array meaning it won't spawn again
-    //}
-    
-    //generateSpaceship();
     for (let currPlanet of onScreenPlanets) {
-        //
+        
         const planet = new Image();
         planet.src = currPlanet.img;
         currPlanet.topx -= 1;
-        //
+        
         planet.onload = function () {
-            context.clearRect(currPlanet.topx + 1,currPlanet.topy,12,12);
-            context.drawImage(planet, currPlanet.topx, currPlanet.topy,12,12);
+            context.clearRect(currPlanet.topx + 1, currPlanet.topy, 12, 12);
+            context.drawImage(planet, currPlanet.topx, currPlanet.topy, 12, 12);
         }
         if (currPlanet.topx < -12) {
-            context.clearRect(currPlanet.topx,currPlanet.topy,12,12);
+            context.clearRect(currPlanet.topx, currPlanet.topy, 12, 12);
             onScreenPlanets.shift();
             planetCount += 1;
             changingPlanetCount = document.getElementById("planetCount");
             changingPlanetCount.innerHTML = planetCount;
-            
         }
         
         let epsilon = 10;
