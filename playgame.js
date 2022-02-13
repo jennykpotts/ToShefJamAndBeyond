@@ -46,7 +46,7 @@ var canvas = document.getElementById('my_canvas'),
 context = canvas.getContext('2d');
 
 function addPlanet(){
-    var newPlanet=new Planet(planetImgs[randomImageGenerator()], canvas.width - 12, 12); //Doesnt work because don't have canvas width/height
+    var newPlanet=new Planet(planetImgs[randomImageGenerator()], canvas.width - 12, generateYCoordinate());
     onScreenPlanets.push(newPlanet);
     return newPlanet;
 }
@@ -57,6 +57,11 @@ function randomImageGenerator(){
 
 function deletePlanet(){
     onScreenPlanets.shift();
+}
+
+function generateYCoordinate(){
+    canvas.height=canvas.height;
+    return Math.floor(Math.random()*(canvas.height-11)+12);
 }
 
 var canvas = document.getElementById('my_canvas'),
@@ -116,6 +121,7 @@ function planets(){
         planet = new Image();
         planet.src = currPlanet.img;
         currPlanet.topx -= 1;
+        console.log(currPlanet.topy)
         planet.onload = function() {
             context.drawImage(planet, currPlanet.topx,currPlanet.topy, 12, 12);
         }
