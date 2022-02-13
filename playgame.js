@@ -39,7 +39,8 @@ class Planet{
     }
 }
 
-var intervalid=window.setInterval(planets,20);
+window.setInterval(planets,20);
+window.setInterval(generatePlanet, 1000);
 
 
 var canvas = document.getElementById('my_canvas'),
@@ -61,17 +62,14 @@ function deletePlanet(){
 
 function generateYCoordinate(){
     canvas.height=canvas.height;
-    return Math.floor(Math.random()*(canvas.height-11)+12);
+    return Math.floor(Math.random()*(canvas.height-22)+12);
 }
 
 var canvas = document.getElementById('my_canvas'),
 context = canvas.getContext('2d');
 let x = 0;
 let y = 0;
-
-generateSpaceship();
-generatePlanet();
-window.setInterval(generatePlanet, 1000);
+let planetCount=0;
 
 function generateSpaceship()
 {
@@ -122,9 +120,16 @@ function planets(){
         planet = new Image();
         planet.src = currPlanet.img;
         currPlanet.topx -= 1;
-        console.log(currPlanet.topy)
         planet.onload = function() {
             context.drawImage(planet, currPlanet.topx,currPlanet.topy, 12, 12);
+        }
+        if (currPlanet.topx<0){
+            onScreenPlanets.shift();
+            planetCount+=1;
+            console.log(planetCount)
+            changingPlanetCount=document.getElementById("planetCount")
+            changingPlanetCount.innerHTML=planetCount;
+
         }
         generateSpaceship();
     }
