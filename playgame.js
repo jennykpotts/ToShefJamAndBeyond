@@ -135,7 +135,9 @@ window.addEventListener("load", () => {
 
 function displayText() { 
     document.getElementById("game-over").style.display = "block";
-    document.getElementById("game-over").innerHTML=`Game over :( . Your score was: ${planetCount}`;
+    if(window.confirm(`Game over :( . Your score was: ${planetCount}`)){
+        window.location.href="mainpage.html"
+    }
     
     // ctx.font = "30px Arial";
     // ctx.fillText("Hello World", 10, 50);
