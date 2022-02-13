@@ -19,12 +19,18 @@ let currIdx = 0;
 background.src = imgs[currIdx % 6];
 document.querySelector(".prev").addEventListener("click", () => {
     currIdx--; 
-    background.src = imgs[((currIdx % 6) + 6) % 6];
+    if (currIdx<0){
+        currIdx=5;
+    }
+    background.src = imgs[currIdx%6];
 
 });
 document.querySelector(".next").addEventListener("click", () => {
-    currIdx++; 
-    background.src = imgs[((currIdx % 6) + 6) % 6];
+    currIdx++;
+    if(currIdx>5){
+        currIdx=0;
+    } 
+    background.src = imgs[currIdx%6];
 
 });
 document.querySelector(".gotogame").addEventListener("click", () => {
