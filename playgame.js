@@ -71,6 +71,7 @@ let y = 0;
 
 generateSpaceship();
 generatePlanet();
+window.setInterval(generatePlanet, 1000);
 
 function generateSpaceship()
 {
