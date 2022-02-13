@@ -36,36 +36,17 @@ class Planet{
 
     moveplanet(){
         setTopx(this.topx-=15);
-        setTopy(this.bottomx-=15);
     }
 }
 
-var intervalid=window.setInterval(planets,500);
+var intervalid=window.setInterval(planets,20);
 
 
 var canvas = document.getElementById('my_canvas'),
 context = canvas.getContext('2d');
 
-
-function planets(){
-    //for (let planetCount = 0; planetCount< onScreenPlanets.length-1 ; planetCount++){
-        //spawn planet from list
-        //move planet from list
-    //}
-    //if (onScreenPlanets=null || onScreenPlanets.slice(-1)){
-        //Add new planet to list
-        //Spawn new planet
-    //}
-
-    //if (onScreenPlanets[0].getTopx<=0 && onScreenPlanets!=0){
-        //Delete planet from the array meaning it won't spawn again
-    //}
-
-
-}
-
 function addPlanet(){
-    var newPlanet=new Planet(planetImgs[randomImageGenerator()], 5,5); //Doesnt work because don't have canvas width/height
+    var newPlanet=new Planet(planetImgs[randomImageGenerator()], canvas.width - 12, 12); //Doesnt work because don't have canvas width/height
     onScreenPlanets.push(newPlanet);
     return newPlanet;
 }
@@ -78,7 +59,6 @@ function deletePlanet(){
     onScreenPlanets.shift();
 }
 
-    
 var canvas = document.getElementById('my_canvas'),
 context = canvas.getContext('2d');
 let x = 0;
@@ -96,25 +76,51 @@ function generateSpaceship()
   }
 }
 
+document.onkeydown = function(e) {
+    if(e.keyCode === 38 && y >= 0) {
+        y -= 5;
+        canvas.width=canvas.width;
+        context.drawImage(spaceship,x,y,12,6);
+    }
+    if(e.keyCode === 40) {
+        y+=5;
+        canvas.width=canvas.width;
+        context.drawImage(spaceship,x,y,12,6);
+    }
+}
+
 function generatePlanet() {
     let currPlanet = addPlanet();
     planet = new Image();
     planet.src = currPlanet.img;
     planet.onload = function() {
-        context.drawImage(planet, currPlanet.topy,currPlanet.topx, 12, 12);
+        context.drawImage(planet, currPlanet.topx,currPlanet.topy, 12, 12);
     }
-    console.log('hi')
-  }
+}
 
-document.onkeydown = function(e) {
-    if(e.keyCode === 38 && y >= 0) {
-        y -= 5;
+function planets(){
+    //for (let planetCount = 0; planetCount< onScreenPlanets.length-1 ; planetCount++){
+        //spawn planet from list
+        //move planet from list
+    //}
+    //if (onScreenPlanets=null || onScreenPlanets.slice(-1)){
+        //Add new planet to list
+        //Spawn new planet
+    //}
+
+    //if (onScreenPlanets[0].getTopx<=0 && onScreenPlanets!=0){
+        //Delete planet from the array meaning it won't spawn again
+    //}
+    for (let currPlanet of onScreenPlanets) {
+        canvas.width=canvas.width;
+        planet = new Image();
+        planet.src = currPlanet.img;
+        currPlanet.topx -= 1;
+        planet.onload = function() {
+            context.drawImage(planet, currPlanet.topx,currPlanet.topy, 12, 12);
+        }
+        generateSpaceship();
     }
-    if(e.keyCode === 40) {
-        y+=5;
-    }
-    canvas.width=canvas.width;
-    context.drawImage(spaceship,x,y,12,6);
 }
 
 //Scrolling background image for canvas
